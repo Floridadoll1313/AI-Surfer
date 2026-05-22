@@ -1,0 +1,8 @@
+{
+  "name": "Remix: ocean-tide-drop-ai-surfer",
+  "description": "Cinematic surf-mythic MCP skill pack for the Ocean Tide Drop AI Surfer Console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
