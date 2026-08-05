@@ -16,7 +16,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for SonarCloud to analyze history
+          fetch-depth: 0
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -25,6 +25,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run build
+        run: npm run build
 
       - name: Run tests with coverage
         run: npm test -- --coverage || true
@@ -35,7 +41,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=Floridadoll1313_Hot-Island-Fun
+            -Dsonar.projectKey=otdaisurfer-gif
             -Dsonar.organization=floridadoll1313
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.sources=.
